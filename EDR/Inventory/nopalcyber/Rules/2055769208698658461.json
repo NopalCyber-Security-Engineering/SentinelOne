@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2024-10-07T10:07:19.818954Z",
+    "name": "[NopalCyber] Suspicious Bitsadmin Activity",
+    "native_rule_id": "2055769208698658461",
+    "platform": "sentinelone-edr",
+    "severity": "Low",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2024-10-07T10:06:26.847221Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Detects downloads, transfers, or job creations using Windows Background Intelligent Transfer Service (BITS) Admin Tool. This tactic may be indicative of malicious activity where malware is downloading second stage payloads using obscure methods.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 2,
+    "id": "2055769208698658461",
+    "lastAlertTime": "2026-08-25T04:18:58.016000Z",
+    "name": "[NopalCyber] Suspicious Bitsadmin Activity",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "dataSource.name = 'SentinelOne' and endpoint.os = 'windows' and event.type = 'Process Creation' and (tgt.process.name contains 'bitsadmin.exe' or tgt.process.displayName='BITS administration utility') and tgt.process.cmdline contains ('download', 'transfer', 'create', 'addfile', 'SetNotifyCmdLine', 'cancel') and not (tgt.process.user contains ('SYSTEM', 'AUTORITE NT', 'SISTEMA'))\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Low",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2024-10-07T10:07:19.818954Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:36:06.553023Z",
+    "name": "[NopalCyber] RagnarLocker Ransomware",
+    "native_rule_id": "2236178919452312050",
+    "platform": "sentinelone-edr",
+    "severity": "Critical",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T08:08:20.296283Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236178919452312050",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] RagnarLocker Ransomware",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "event.category = 'Process'\nAND\n(\n  (\n    (\n      tgt.process.cmdline contains:anycase 'R^A^G^N^A^R_'\n      OR tgt.process.cmdline contains:anycase 'R!A!G!N!A!R_'\n    )\n    AND NOT\n    (\n      src.process.commandLine contains:anycase 'explorer.exe'\n      OR src.process.commandLine contains:anycase 'Program Files'\n    )\n    AND src.process.pid != '0'\n  )\n  OR\n  (\n    src.process.commandLine RegExp '\\.exe\\s{1,2}\\-pass\\s[a-zA-Z0-9]{8,24}$'\n    AND NOT\n    (\n      src.process.commandLine contains:anycase 'Program Files'\n    )\n  )\n)",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Critical",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:36:06.553023Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

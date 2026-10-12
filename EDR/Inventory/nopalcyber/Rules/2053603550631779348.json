@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2024-10-04T10:24:57.217940Z",
+    "name": "[NopalCyber] Suncrypt Ransomware",
+    "native_rule_id": "2053603550631779348",
+    "platform": "sentinelone-edr",
+    "severity": "Critical",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2024-10-04T10:23:40.285477Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": " An event associated with Suncrypt ransomware has been detected on the endpoint. e.g., > C:\\Users\\%username%\\Pictures\\victimName_cryptor.exe > C:\\temp\\update.exe -nomutex -agr -path \"\\\\10.2.92.39\\C$\"\" -log",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2053603550631779348",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Suncrypt Ransomware",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "(ObjectType = \"Process\" AND ((TgtProcCmdLine Contains Anycase \"-nomutex \" AND TgtProcCmdLine Contains Anycase \"-agr \" AND TgtProcCmdLine Contains Anycase \"-path \") OR TgtProcCmdLine RegExp \"\\\\[a-z.]{2,40}_cryptor\\.exe\")) OR (ObjectType = \"File\" AND TgtFilePath RegExp \"\\\\[a-z.]{2,40}_cryptor\\.exe\")",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Critical",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2024-10-04T10:24:57.217940Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

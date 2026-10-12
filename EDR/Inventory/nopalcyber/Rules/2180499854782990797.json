@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-04-08T09:13:58.075809Z",
+    "name": "[NopalCyber] Browser Credential and Cookie Data Access Attempt",
+    "native_rule_id": "2180499854782990797",
+    "platform": "sentinelone-edr",
+    "severity": "Low",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-03-28T12:23:58.553775Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Detects processes attempting to access sensitive browser data, such as login credentials, cookies, or other profile information, from browsers like Chrome, Opera, or Firefox. Adversaries can exploit this access to steal stored credentials, enabling unauthorized logins to accounts and services. Additionally, by extracting session cookies, attackers can hijack active user sessions, bypassing authentication mechanisms to impersonate victims. This technique is commonly used to escalate privileges, steal sensitive data, or propagate further attacks across systems or services without triggering standard security controls. Accessing browser profiles allows attackers to compromise accounts tied to corporate or personal environments, potentially leading to broader network exploitation.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2180499854782990797",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Browser Credential and Cookie Data Access Attempt",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "dataSource.name = 'SentinelOne' AND event.type = 'Process Creation' AND src.process.cmdline contains ('\\\\Google\\\\Chrome\\\\User Data\\\\Default\\\\Login Data', '\\\\Opera Software\\\\Opera Stable\\\\Login Data', '.default\\\\cookies.sqlite', '.default\\\\key', '.default\\\\logins.json')\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Low",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-04-08T09:13:58.075809Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

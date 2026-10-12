@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-04-02T11:35:28.442377Z",
+    "name": "[NopalCyber] FSUTIL - Delete Volume Journal and Data Zeroing Activity",
+    "native_rule_id": "2184098514793343567",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": true,
+    "createdAt": "2025-04-02T11:33:52.257083Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Detects the use of fsutil.exe to zero out file contents. Adversaries often use this technique during ransomware attacks to overwrite files before encrypting them, preventing data recovery even if the encryption process fails or the ransom is paid. This can also be used to wipe evidence of their activity or to disrupt systems by rendering critical files unusable.\n\nDetects the use of fsutil.exe to delete the USN journal volume. Adversaries can abuse this action to obscure file system activity and evade forensic analysis. By deleting the USN journal, attackers remove a key source of evidence that tracks file creation, modification, and deletion events.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2184098514793343567",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] FSUTIL - Delete Volume Journal and Data Zeroing Activity",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "dataSource.name = 'SentinelOne' event.type = 'Process Creation' and endpoint.os = 'windows' and tgt.process.cmdline contains 'fsutil' and tgt.process.cmdline contains 'deletejournal' and tgt.process.cmdline contains 'usn' and tgt.process.cmdline contains 'setZeroData' and not (src.process.name in:anycase ('FGA.Orchestrator.Host.exe') or src.process.displayName = 'FGA.Orchestrator.Host')",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": "Malicious",
+    "updatedAt": "2025-04-02T11:35:28.442377Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

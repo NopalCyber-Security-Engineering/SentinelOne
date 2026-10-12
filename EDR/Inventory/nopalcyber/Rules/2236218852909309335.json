@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:32:06.593066Z",
+    "name": "[NopalCyber] MSHTA Remote File Execution",
+    "native_rule_id": "2236218852909309335",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T09:27:40.734871Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236218852909309335",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] MSHTA Remote File Execution",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "\"(\n  event.category = 'Process'\n  AND event.type = 'Process Creation'\n  AND endpoint.os.process.name = 'windows'\n)\nAND\n(\n  (\n    (\n      src.process.commandLine contains:anycase 'mshta'\n      OR src.process.commandLine contains:anycase 'mshta.exe'\n    )\n    AND src.process.commandLine ILIKE 'http'\n  )\n  OR\n  (\n    (\n      tgt.process.cmdline contains:anycase 'mshta'\n      OR tgt.process.cmdline contains:anycase 'mshta.exe'\n    )\n    AND tgt.process.cmdline ILIKE 'http'\n  )\n)\"\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:32:06.593066Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

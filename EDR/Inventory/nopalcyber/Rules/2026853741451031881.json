@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2024-08-28T12:37:23.067658Z",
+    "name": "[NopalCyber] Medusa Locker Registry Key",
+    "native_rule_id": "2026853741451031881",
+    "platform": "sentinelone-edr",
+    "severity": "Critical",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2024-08-28T12:36:34.540509Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "A registry event associated with Medusa Locker ransomware has been detected. This may indicate that the ransomware has been executed in the endpoint.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2026853741451031881",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Medusa Locker Registry Key",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "registry.keyPath contains:anycase \"SOFTWARE\\MDSLK\" OR registry.keyPath contains:anycase \"SOFTWARE\\Medusa\"",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Critical",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2024-08-28T12:37:23.067658Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

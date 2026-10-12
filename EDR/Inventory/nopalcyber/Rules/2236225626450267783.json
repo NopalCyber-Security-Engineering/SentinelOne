@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:28:06.652173Z",
+    "name": "[NopalCyber] Hive Ransomware",
+    "native_rule_id": "2236225626450267783",
+    "platform": "sentinelone-edr",
+    "severity": "Critical",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T09:41:08.203794Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236225626450267783",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Hive Ransomware",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "\"endpoint.os.process.name = 'Windows'\nAND\n(\n  (\n    event.category = 'Process'\n    AND\n    (\n      (\n        cmdline contains:anycase 'Windows_x64_encrypt.dll'\n        OR cmdline contains:anycase 'Windows_x64_encrypt.exe'\n        OR cmdline contains:anycase 'Windows_x32_encrypt.dll'\n        OR cmdline contains:anycase 'Windows_x32_encrypt.exe'\n      )\n      OR tgt.process.cmdline RegExp '\\.exe\\s{1,10}-u\\s{1,10}[A-Za-z0-9]{6,32}\\:[A-Za-z0-9]{6,32}$'\n    )\n    AND src.process.commandLine Does Not Contain '\\EnCase.exe'\n  )\n  OR\n  (\n    event.category = 'File'\n    AND\n    (\n      tgt.file.path contains:anycase '\\Windows_x64_encrypt.dll'\n      OR tgt.file.path contains:anycase '\\Windows_x64_encrypt.exe'\n      OR tgt.file.path contains:anycase '\\Windows_x32_encrypt.dll'\n      OR tgt.file.path contains:anycase '\\Windows_x32_encrypt.exe'\n    )\n    AND\n    (\n      tgt.file.path EndsWith Anycase '.exe'\n      OR tgt.file.path EndsWith Anycase '.dll'\n    )\n    AND src.process.commandLine Does Not Contain '\\EnCase.exe'\n  )\n)\"\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Critical",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:28:06.652173Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

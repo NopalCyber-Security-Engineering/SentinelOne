@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2024-11-11T15:39:20.078046Z",
+    "name": "[NopalCyber] Potential AMSI Bypass via PowerShell",
+    "native_rule_id": "2081303577977047119",
+    "platform": "sentinelone-edr",
+    "severity": "Low",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2024-11-11T15:38:40.869717Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Detects the execution of suspicious PowerShell cmdlets related to Antimalware Scan Interface (AMSI) bypass techniques. An adversary may attempt to disable or bypass AMSI to prevent security tools from scanning and detecting malicious scripts. By disabling AMSI, attackers can execute obfuscated or harmful PowerShell commands without being flagged, allowing them to carry out actions such as malware deployment, credential theft, or system compromise undetected.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2081303577977047119",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Potential AMSI Bypass via PowerShell",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "dataSource.name = 'SentinelOne' AND endpoint.os = 'windows' AND event.type = 'Command Script' AND cmdScript.content contains ('System.Management.Automation.AmsiUtils', 'Bypass.AMSI', 'Invoke-AmsiBypass') AND src.process.parent.displayName != 'System Center Management Service Host Process' and !(cmdScript.content contains ('sentinelbreakpoint', 'PowerSploitIndicator'))\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Low",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2024-11-11T15:39:20.078046Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2024-10-02T09:48:52.174869Z",
+    "name": "[Nopal Cyber] Shadow Copy Deletion",
+    "native_rule_id": "2048383227022740843",
+    "platform": "sentinelone-edr",
+    "severity": "Critical",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2024-09-27T05:31:49.214989Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Detect Shadow copy deletion, commonly used by ransomware",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 2,
+    "id": "2048383227022740843",
+    "lastAlertTime": "2026-07-30T09:30:13.028000Z",
+    "name": "[Nopal Cyber] Shadow Copy Deletion",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "(((src.process.image.path matches \"\\powershell.exe\" OR src.process.image.path matches \"\\vssadmin.exe\" OR src.process.image.path matches \"\\vssvc.exe\" OR src.process.image.path matches \"\\wmic.exe\" ) OR src.process.cmdline contains ( \"wmic\"  , \"vssadmin\"  , \"vssvc\" ) ) AND (src.process.cmdline contains:anycase \"delete\" AND src.process.cmdline contains:anycase \"shadow\")) dataSource.category = 'security'",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Critical",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2024-10-02T09:48:52.174869Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

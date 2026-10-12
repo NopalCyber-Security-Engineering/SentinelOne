@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-05-30T13:42:05.211181Z",
+    "name": "[NopalCyber] Block WPS Office Setup - Test",
+    "native_rule_id": "2195601789970177299",
+    "platform": "sentinelone-edr",
+    "severity": "Low",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-04-18T08:28:49.517680Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Requirement from Heritage",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 1,
+    "id": "2195601789970177299",
+    "lastAlertTime": "2026-09-29T13:56:34.379000Z",
+    "name": "[NopalCyber] Block WPS Office Setup - Test",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "src.process.cmdline contains 'wps' and src.process.displayName='WPS\\ Office\\ Setup'",
+    "scope": "site",
+    "scopeId": [
+      "1800011140155280069"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd., / NopalCyber",
+    "severity": "Low",
+    "siteId": "1800011140155280069",
+    "siteName": "NopalCyber",
+    "status": "Active",
+    "statusReason": "Rule was activated by dileep.chokkapu@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-05-30T13:42:05.211181Z",
+    "updater": "dileep.chokkapu@nopalcyber.com",
+    "updaterId": "2167433160644023071"
+  }
+}

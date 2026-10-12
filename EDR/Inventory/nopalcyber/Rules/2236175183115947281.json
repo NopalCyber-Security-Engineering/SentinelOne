@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:38:07.360578Z",
+    "name": "[NopalCyber] [TEMP] Potential beaconing activity to Domains related to 3CX 3CXDesktopApp Compromise",
+    "native_rule_id": "2236175183115947281",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T08:00:54.889769Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236175183115947281",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] [TEMP] Potential beaconing activity to Domains related to 3CX 3CXDesktopApp Compromise",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "(\n  event.dns.request contains:anycase 'akamaicontainer.com'\n  OR event.dns.request contains:anycase 'akamaitechcloudservices.com'\n  OR event.dns.request contains:anycase 'azuredeploystore.com'\n  OR event.dns.request contains:anycase 'azureonlinecloud.com'\n  OR event.dns.request contains:anycase 'azureonlinestorage.com'\n  OR event.dns.request contains:anycase 'dunamistrd.com'\n  OR event.dns.request contains:anycase 'glcloudservice.com'\n  OR event.dns.request contains:anycase 'journalide.org'\n  OR event.dns.request contains:anycase 'msedgepackageinfo.com'\n  OR event.dns.request contains:anycase 'msstorageazure.com'\n  OR event.dns.request contains:anycase 'msstorageboxes.com'\n  OR event.dns.request contains:anycase 'officeaddons.com'\n  OR event.dns.request contains:anycase 'officestoragebox.com'\n  OR event.dns.request contains:anycase 'pbxcloudeservices.com'\n  OR event.dns.request contains:anycase 'pbxphonenetwork.com'\n  OR event.dns.request contains:anycase 'pbxsources.com'\n  OR event.dns.request contains:anycase 'qwepoi123098.com'\n  OR event.dns.request contains:anycase 'sbmsa.wiki'\n  OR event.dns.request contains:anycase 'sourceslabs.com'\n  OR event.dns.request contains:anycase 'visualstudiofactory.com'\n  OR event.dns.request contains:anycase 'zacharryblogs.com'\n)",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:38:07.360578Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

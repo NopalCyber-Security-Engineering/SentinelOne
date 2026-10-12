@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:34:06.709569Z",
+    "name": "[NopalCyber] Log4_IOC's",
+    "native_rule_id": "2236183543597017253",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T08:17:31.536706Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236183543597017253",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Log4_IOC's",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "IP in:anycase ( '199.195.250.77'           , '204.8.156.142'           , '205.185.117.149'           , '209.127.17.242'           , '209.141.41.103'           , '45.153.160.131'           , '45.153.160.138'           , '62.76.41.46'           , '68.183.44.143'           , '68.183.198.247'           , '88.80.20.86'           , '109.70.100.34'           , '109.237.96.124'           , '116.24.67.213'           , '134.122.34.28'           , '137.184.102.82'           , '137.184.106.119'           , '142.93.34.250'           , '143.198.32.72'           , '143.198.45.117'           , '147.182.167.165'           , '147.182.169.254'           , '147.182.219.9'           , '151.115.60.113'           , '159.65.58.66'           , '159.65.155.208'           , '164.90.199.216'           , '167.99.164.201'           , '167.99.172.58'           , '167.99.172.213'           , '185.220.100.241'           , '185.220.101.37'           , '185.220.101.41'           , '185.220.101.57'           , '185.220.101.134'           , '185.220.101.144'           , '185.220.101.154'           , '185.220.101.160'           , '185.220.101.171'           , '185.220.101.186'           , '185.220.102.249'           , '188.166.48.55'           , '188.166.92.228'           , '188.166.122.43'           , '193.189.100.195'           , '193.218.118.183'           , '195.19.192.26'           , '212.193.57.225' )",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:34:06.709569Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

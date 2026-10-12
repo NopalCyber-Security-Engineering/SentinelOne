@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:30:08.428940Z",
+    "name": "[NopalCyber] Malicious DLL Execution - Export Function Call",
+    "native_rule_id": "2236222532412851601",
+    "platform": "sentinelone-edr",
+    "severity": "Critical",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T09:34:59.366098Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236222532412851601",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Malicious DLL Execution - Export Function Call",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "\"(\n  tgt.process.cmdline EndsWith '.dll,StartW'\n  OR tgt.process.cmdline EndsWith '.dll StartW'\n  OR tgt.process.cmdline EndsWith '.dll,DllRegisterServer'\n  OR tgt.process.cmdline EndsWith '.dll DllRegisterServer'\n  OR tgt.process.cmdline EndsWith '.dll,DllUnRegisterServer'\n  OR tgt.process.cmdline EndsWith '.dll DllUnRegisterServer'\n  OR tgt.process.cmdline EndsWith '.dll,DllInstall'\n  OR tgt.process.cmdline EndsWith '.dll DllInstall'\n)\nAND src.process.parent.image.path Does Not ContainCIS 'McAfee'\nAND src.process.commandLine Does Not ContainCIS '\\McAfee'\nAND NOT\n(\n  tgt.process.cmdline contains:anycase 'fcagiep'\n  OR tgt.process.cmdline contains:anycase 'fcploff'\n  OR tgt.process.cmdline contains:anycase 'fcplou'\n)\"\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Critical",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:30:08.428940Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

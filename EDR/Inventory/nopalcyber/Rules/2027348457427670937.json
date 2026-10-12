@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2024-08-29T04:59:41.810227Z",
+    "name": "[NopalCyber] Qbot-QakBot - Calc.exe Bin Replacement",
+    "native_rule_id": "2027348457427670937",
+    "platform": "sentinelone-edr",
+    "severity": "Critical",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2024-08-29T04:59:29.281467Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "A process event associated with the Qbot\\Qakbot malware has been detected.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2027348457427670937",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Qbot-QakBot - Calc.exe Bin Replacement",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "src.process.cmdline contains:anycase \"ping\" AND src.process.cmdline contains:anycase \"-n \" AND src.process.cmdline contains:anycase \"type\" AND src.process.cmdline contains:anycase \"calc.exe\" AND src.process.cmdline contains:anycase \">\" dataSource.category = 'security' dataSource.name in ('SentinelOne', 'Windows Event Logs')",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Critical",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2024-08-29T04:59:41.810227Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

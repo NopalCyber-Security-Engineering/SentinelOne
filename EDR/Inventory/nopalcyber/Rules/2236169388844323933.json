@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:38:07.167246Z",
+    "name": "[NopalCyber] DLL Loading by Powershell Empire or Meterpreter",
+    "native_rule_id": "2236169388844323933",
+    "platform": "sentinelone-edr",
+    "severity": "Critical",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T07:49:24.158728Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236169388844323933",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] DLL Loading by Powershell Empire or Meterpreter",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "(\n  ModulePath EndsWith Anycase 'System.Management.Automation.Dll'\n  OR ModulePath EndsWith Anycase 'System.Management.Automation.ni.Dll'\n)\nAND NOT\n(\n  src.process.image.path EndsWith Anycase 'installutil.exe'\n  OR src.process.image.path EndsWith Anycase 'Microsoft.EnterpriseManagement.ServiceManager.UI.Console.exe'\n  OR src.process.image.path EndsWith Anycase 'SCCMCliCtrWPF.exe'\n  OR src.process.image.path EndsWith AnyCase 'Microsoft.EnterpriseManagement.ServiceManager.UI.Console.exe'\n  OR src.process.image.path EndsWith AnyCase 'SCCMCliCtrWPF.exe'\n  OR src.process.image.path EndsWith AnyCase 'ScriptEditor.exe'\n  OR src.process.image.path EndsWith AnyCase 'ScriptRunner.exe'\n  OR src.process.image.path EndsWith AnyCase '\\System32\\RemoteFXvGPUDisablement.exe'\n  OR src.process.image.path EndsWith AnyCase '\\System32\\sdiagnhost.exe'\n  OR src.process.image.path EndsWith AnyCase 'azureadconnect.exe'\n  OR src.process.image.path EndsWith AnyCase 'microsoft.exchange.servicehost.exe'\n  OR src.process.image.path EndsWith AnyCase 'mmc.exe'\n  OR src.process.image.path EndsWith AnyCase 'mscorsvw.exe'\n  OR src.process.image.path EndsWith AnyCase 'powershell.exe'\n  OR src.process.image.path EndsWith AnyCase 'powershell_ise.exe'\n  OR src.process.image.path EndsWith AnyCase 'wsmprovhost.exe'\n)\nAND NOT\n(\n  src.process.image.path EndsWith AnyCase 'Microsoft Visual Studio'\n  OR src.process.image.path EndsWith AnyCase 'Program Files\n  (\n    x86\n  )\n  '\n)",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Critical",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:38:07.167246Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

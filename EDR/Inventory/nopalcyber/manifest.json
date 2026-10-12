@@ -1,0 +1,7 @@
+{
+  "client": "nopalcyber",
+  "display_name": "NopalCyber",
+  "platform": "sentinelone-edr",
+  "rule_count": 91,
+  "source": "Detection Platform inventory"
+}

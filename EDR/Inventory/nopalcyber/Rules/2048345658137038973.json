@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2024-10-02T10:24:57.359670Z",
+    "name": "[NopalCyber] Attempt for NTDS Copy",
+    "native_rule_id": "2048345658137038973",
+    "platform": "sentinelone-edr",
+    "severity": "Low",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2024-09-27T04:17:10.659928Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Attempt to copy NTDS file",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 1251,
+    "id": "2048345658137038973",
+    "lastAlertTime": "2026-10-08T06:31:52.503000Z",
+    "name": "[NopalCyber] Attempt for NTDS Copy",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "src.process.cmdline matches '^.*copy.*\\\\\\\\Windows\\\\\\\\NTDS\\\\\\\\NTDS.dit.*' OR src.process.cmdline matches '^.*copy.*\\\\\\\\Windows\\\\\\\\System32\\\\\\\\config\\\\\\\\SYSTEM.*' OR src.process.cmdline contains:anycase \"save HKLM\\\\SYSTEM\" OR (tgt.process.name = 'ntdsutil.exe' AND tgt.process.cmdline contains:anycase \"ac i ntds\") OR (TgtProcName = \"mklink.exe\" AND tgt.process.cmdline matches \"^.*\\\\/[d,D].*GLOBALROOT\\\\\\\\Device\\\\\\\\HarddiskVolumeShadowCopy.*\")",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Low",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2024-10-02T10:24:57.359670Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

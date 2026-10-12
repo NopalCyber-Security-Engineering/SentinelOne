@@ -1,0 +1,7 @@
+{
+  "client": "nopalcyber",
+  "display_name": "NopalCyber",
+  "platform": "sentinelone-ai-siem",
+  "rule_count": 3,
+  "source": "Detection Platform inventory"
+}

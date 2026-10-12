@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2026-08-17T09:00:11.925545Z",
+    "name": "[NopalCyber] Disabling User Account Control via registry modifications",
+    "native_rule_id": "2190568805682581413",
+    "platform": "sentinelone-edr",
+    "severity": "Medium",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": true,
+    "createdAt": "2025-04-11T09:49:11.036629Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "This rule detects modifications to the EnableLUA registry value, which is a critical setting for User Account Control (UAC) on Windows systems. Disabling UAC by setting this value to 0 can significantly weaken the security posture of a system, allowing for easier privilege escalation and defense evasion by attackers.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 73567,
+    "id": "2190568805682581413",
+    "lastAlertTime": "2026-10-08T17:05:38.721000Z",
+    "name": "[NopalCyber] Disabling User Account Control via registry modifications",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "event.category='registry' registry.valueType = 'DWORD' (registry.keyPath contains '\\\\CurrentVersion\\\\Policies\\\\System\\\\ConsentPromptBehaviorAdmin' or registry.keyPath contains \"\\\\CurrentVersion\\\\Policies\\\\System\\\\EnableLUA\" or registry.keyPath contains \"\\\\LocalAccountTokenFilterPolicy\") registry.value='0' src.process.displayName != 'API\\ for\\ MDM\\ Enrollment' osSrc.process.displayName != 'API\\ for\\ MDM\\ Enrollment'",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Medium",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": "Suspicious",
+    "updatedAt": "2026-08-17T09:00:11.925545Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

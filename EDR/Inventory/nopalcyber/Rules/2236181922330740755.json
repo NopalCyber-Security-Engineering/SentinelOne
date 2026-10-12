@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:34:06.518234Z",
+    "name": "[NopalCyber] Process Running from Root of ProgramData Dir",
+    "native_rule_id": "2236181922330740755",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T08:14:18.266313Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236181922330740755",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Process Running from Root of ProgramData Dir",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "(\n  event.category = 'Process'\n  AND event.type = 'Process Creation'\n)\nAND\n(\n  tgt.process.cmdline RegExp '\n  (\n    ?i\n  )\n  (\n    \\\\ProgramData\\\\[a-zA-Z0-9]{1,20}\\.\n    (\n      exe|dll|ocx|vbs|vbe|jar|jse|bat|wpl|dat|bin|rtf|png|jpg\n    )\n  )\n  '\n  AND NOT\n  (\n    tgt.process.cmdline contains:anycase 'uninstall'\n    OR tgt.process.cmdline contains:anycase 'Arete'\n    OR tgt.process.cmdline contains:anycase 'senti'\n    OR tgt.process.cmdline contains:anycase 'alternateshell.exe'\n    OR tgt.process.cmdline contains:anycase 'logonsession.exe'\n    OR tgt.process.cmdline contains:anycase 'FWAInstallMonitor.exe'\n    OR tgt.process.cmdline contains:anycase 'notepad'\n    OR tgt.process.cmdline contains:anycase '\\VDT.exe'\n    OR tgt.process.cmdline contains:anycase 'Install'\n    OR tgt.process.cmdline contains:anycase '\\Program Files'\n    OR tgt.process.cmdline contains:anycase 'Setup'\n    OR tgt.process.cmdline contains:anycase 'Clean'\n    OR tgt.process.cmdline contains:anycase 'Viewer'\n  )\n  AND NOT\n  (\n    src.process.commandLine contains:anycase 'mcafee'\n    OR src.process.commandLine contains:anycase 'malwarebytes'\n    OR src.process.commandLine contains:anycase 'symantec'\n    OR src.process.commandLine contains:anycase 'Adobe'\n    OR src.process.commandLine contains:anycase 'monitor'\n    OR src.process.commandLine contains:anycase 'AfterFX.exe'\n    OR src.process.commandLine contains:anycase 'SynTPEnh.exe'\n    OR src.process.commandLine contains:anycase 'Trend Micro'\n  )\n)",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:34:06.518234Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

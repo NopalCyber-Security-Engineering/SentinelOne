@@ -1,0 +1,67 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "scheduled",
+    "last_modified": "2026-10-08T10:33:30.910961Z",
+    "name": "[Nopalcyber][AI SIEM] FortiGate External Source Login Activity",
+    "native_rule_id": "2585591359403369734",
+    "platform": "sentinelone-ai-siem",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2026-10-08T10:28:29.022842Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": "Detects FortiGate login events originating from public/external IP addresses, excluding private/internal IP ranges. External authentication attempts against the firewall may indicate internet-based credential attacks, unauthorized access attempts, or compromised accounts being used to access the network perimeter.",
+    "editable": true,
+    "entityMappings": [
+      {
+        "columnName": "unmapped.srcip"
+      }
+    ],
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 2,
+    "id": "2585591359403369734",
+    "lastAlertTime": null,
+    "name": "[Nopalcyber][AI SIEM] FortiGate External Source Login Activity",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "scheduled",
+    "reachedLimit": false,
+    "s1ql": "",
+    "scheduledParams": {
+      "alertPerRow": false,
+      "disableStreaksLogic": true,
+      "lookbackWindowMinutes": 360,
+      "query": "dataSource.name='FortiGate'\nAND event.type='system'\nAND unmapped.action='login'\nAND unmapped.srcip!=''\nAND profile = 'super_admin' \nAND !net_private(unmapped.srcip)\n| group count() by unmapped.srcip,profile ",
+      "runIntervalMinutes": 360,
+      "threshold": {
+        "operator": "Greater",
+        "value": 0
+      }
+    },
+    "scope": "site",
+    "scopeId": [
+      "1800011140155280069"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd., / NopalCyber",
+    "severity": "High",
+    "siteId": "1800011140155280069",
+    "siteName": "NopalCyber",
+    "status": "Active",
+    "statusReason": "Rule was activated by bhanu.nandanampati@nopalcyber.com and will become Active within an hour",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2026-10-08T10:33:30.910961Z",
+    "updater": "bhanu.nandanampati@nopalcyber.com",
+    "updaterId": "2091137091831008615"
+  }
+}

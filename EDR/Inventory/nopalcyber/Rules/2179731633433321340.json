@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-03-27T10:58:07.289638Z",
+    "name": "[NopalCyber] Delete Windows System Logs via Clear-EventLog",
+    "native_rule_id": "2179731633433321340",
+    "platform": "sentinelone-edr",
+    "severity": "Medium",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": true,
+    "createdAt": "2025-03-27T10:57:39.431606Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Detects the deletion of Windows system logs using the Clear-EventLog PowerShell command. An adversary can exploit this technique to remove key system logs that provide visibility into system events and potential malicious activities. By deleting these logs, attackers aim to erase evidence of their actions, hindering the ability of defenders to investigate security incidents and trace the sequence of events. This technique is a common form of defense evasion, allowing attackers to cover their tracks and impede forensic investigations, making it harder to detect and respond to ongoing threats.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2179731633433321340",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Delete Windows System Logs via Clear-EventLog",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "dataSource.name = 'SentinelOne' and endpoint.os = 'windows' event.type = 'Command Script' (src.process.name in:anycase ('powershell.exe') or src.process.displayName = 'Windows PowerShell') cmdScript.content contains 'clear-eventlog' and cmdScript.content contains '-logname'\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Medium",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": "Suspicious",
+    "updatedAt": "2025-03-27T10:58:07.289638Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

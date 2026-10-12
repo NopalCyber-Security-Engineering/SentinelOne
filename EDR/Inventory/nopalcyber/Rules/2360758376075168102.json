@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2026-08-17T12:48:12.042380Z",
+    "name": "[NopalCyber] SHA1HULUD Runner Execution",
+    "native_rule_id": "2360758376075168102",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": true,
+    "createdAt": "2025-12-02T05:25:28.811536Z",
+    "creator": "pullarao.yepuri@nopalcyber.com",
+    "creatorId": "2305864507333897361",
+    "description": "Shai-Hulud Worm 2.0 is a major escalation of the NPM supply chain attack, now executing in the preinstall phase to harvest credentials across AWS, Azure, and GCP and establish persistence via GitHub Actions. This query is to detect Sha1Hulud Runner Execution in environment",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2360758376075168102",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] SHA1HULUD Runner Execution",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "dataSource.name = 'SentinelOne' and event.type = 'Process Creation' and src.process.cmdline contains '--name SHA1HULUD' and src.process.cmdline contains '--unattended --token'",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": "Malicious",
+    "updatedAt": "2026-08-17T12:48:12.042380Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

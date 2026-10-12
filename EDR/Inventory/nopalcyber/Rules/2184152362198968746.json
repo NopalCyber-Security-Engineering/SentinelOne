@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-04-02T13:21:53.957731Z",
+    "name": "[NopalCyber] Detect File Download via Certutil.exe",
+    "native_rule_id": "2184152362198968746",
+    "platform": "sentinelone-edr",
+    "severity": "Medium",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": true,
+    "createdAt": "2025-04-02T13:20:51.367356Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Detects the use of certutil.exe to download files from remote locations. This technique is commonly used by attackers to download malicious payloads while evading detection by using a trusted Windows utility. The rule monitors process creation events for certutil.exe with command line parameters indicating URL downloads.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2184152362198968746",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Detect File Download via Certutil.exe",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "src.process.name = 'certutil.exe' src.process.parent.name='rundll32.exe'(src.process.cmdline contains 'urlcache' OR src.process.cmdline contains '-f') dataSource.category = 'security' dataSource.name in ('SentinelOne', 'Windows Event Logs')",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Medium",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": "Suspicious",
+    "updatedAt": "2025-04-02T13:21:53.957731Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2024-10-02T09:49:01.102433Z",
+    "name": "[NopalCyber] Shadow Copy Deletion via VssAdmin",
+    "native_rule_id": "2052135802671805830",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2024-10-02T09:47:31.096808Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Detects the use of VssAdmin to delete shadow copies, which may indicate an attempt to disable backup and restore capabilities, often a tactic used by ransomware or other malicious activities.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2052135802671805830",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Shadow Copy Deletion via VssAdmin",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "dataSource.name = 'SentinelOne' and event.type = 'Process Creation' and (tgt.process.name = 'vssadmin.exe' or tgt.process.displayName contains 'Volume Shadow Copy Service') and tgt.process.cmdline contains 'delete' and src.process.cmdline contains 'shadows'\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2024-10-02T09:49:01.102433Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

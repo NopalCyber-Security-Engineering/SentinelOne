@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2026-05-12T08:02:41.288773Z",
+    "name": "Axios Supply Chain Attack - Persistence Detection",
+    "native_rule_id": "2477526117437497186",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": true,
+    "createdAt": "2026-05-12T08:02:08.302491Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2477526117437497186",
+    "lastAlertTime": null,
+    "name": "Axios Supply Chain Attack - Persistence Detection",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "event.type = 'Registry Value Create' AND registry.keyPath contains 'HKEY_CURRENT_USER\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run' AND registry.value = 'MicrosoftUpdate' AND registry.value contains 'system.bat'",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by bhanu.nandanampati@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": "Suspicious",
+    "updatedAt": "2026-05-12T08:02:41.288773Z",
+    "updater": "bhanu.nandanampati@nopalcyber.com",
+    "updaterId": "2091137091831008615"
+  }
+}

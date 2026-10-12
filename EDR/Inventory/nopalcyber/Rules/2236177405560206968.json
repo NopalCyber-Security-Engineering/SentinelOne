@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:38:06.012323Z",
+    "name": "[NopalCyber] SocGholish Malware",
+    "native_rule_id": "2236177405560206968",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T08:05:19.825430Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236177405560206968",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] SocGholish Malware",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "endpoint.os.process.name = 'Windows'\nAND\n(\n  (\n    event.category = 'File'\n    AND\n    (\n      tgt.file.path RegExp '\\\\\n      (\n        (\n          (\n            Chrome|Firefox|Edge|Opera\n          )\n          (\n            \\.Update|\\.download|\\.Quick.Update.ver\n          )\n          {0,1}\n        )\n        |download\n      )\n      \\.[a-z0-9]{6}\\.zip$'\n      OR tgt.file.path RegExp 'download\\.[a-z0-9]{4}\\.[a-z0-9]{4}\\.zip$'\n      OR tgt.file.path RegExp '\\\\Εdge\\.Іnstalle\n      (\n        r\\s{0,1}\\\n        (\n          1\\\n        )\n        |r\n      )\n      \\.zip$'\n      OR tgt.file.path RegExp '\\\\\n      (\n        Chrome|Firefox|Edge|Opera\n      )\n      \\.\n      (\n        Quick\\.\n      )\n      {0,1}Update\\.\n      (\n        ver\\.\n      )\n      {0,1}[0-9\\.]{0,10}[a-z0-9]{4,8}\\.js$'\n      OR tgt.file.path ILIKE 'downloads\\update.js'\n    )\n    AND NOT\n    (\n      tgt.file.path contains:anycase 'Outlook'\n      OR tgt.file.path contains:anycase 'Viewer'\n      OR tgt.file.path contains:anycase 'Plugin'\n      OR tgt.file.path contains:anycase 'Form'\n      OR tgt.file.path contains:anycase 'java'\n      OR tgt.file.path contains:anycase 'custom'\n      OR tgt.file.path contains:anycase 'Identifier'\n      OR tgt.file.path contains:anycase '.lnk'\n    )\n  )\n  OR\n  (\n    (\n      event.category = 'Process'\n      AND NOT\n      (\n        cmdline contains:anycase 'Outlook'\n        OR cmdline contains:anycase 'Viewer'\n        OR cmdline contains:anycase 'Plugin'\n        OR cmdline contains:anycase 'Form'\n        OR cmdline contains:anycase 'java'\n        OR cmdline contains:anycase 'custom'\n      )\n    )\n    AND\n    (\n      src.process.commandLine ILIKE 'wscript'\n      AND\n      (\n        (\n          src.process.commandLine RegExp '\n          (\n            Chrome|Firefox|Edge|Opera\n          )\n          \\.\n          (\n            Quick\\.\n          )\n          {0,1}Update\\.\n          (\n            ver\\.\n          )\n          {0,1}[0-9\\.]{0,10}[a-z0-9]{4,8}\\.js'\n          OR src.process.commandLine RegExp '\n          (\n            Chrome|Firefox|Edge|Opera\n          )\n          \\.js'\n        )\n        OR\n        (\n          tgt.process.cmdline RegExp '\n          (\n            Chrome|Firefox|Edge|Opera\n          )\n          \\.\n          (\n            Quick\\.\n          )\n          {0,1}Update\\.\n          (\n            ver\\.\n          )\n          {0,1}[0-9\\.]{0,10}[a-z0-9]{4,8}\\.js'\n          OR tgt.process.cmdline RegExp '\n          (\n            Chrome|Firefox|Edge|Opera\n          )\n          \\.js'\n        )\n        OR cmdline ILIKE 'downloads\\update.js'\n      )\n    )\n  )\n  OR\n  (\n    event.category = 'url.address'\n    AND NOT\n    (\n      network.url contains:anycase 'Outlook'\n      OR network.url contains:anycase 'Viewer'\n      OR network.url contains:anycase 'Plugin'\n      OR network.url contains:anycase 'Form'\n      OR network.url contains:anycase 'java'\n      OR network.url contains:anycase 'custom'\n      OR network.url contains:anycase 'search'\n    )\n    AND network.url RegExp '\n    (\n      (\n        (\n          Chrome|Firefox|Edge|Opera\n        )\n        \\.Update\n      )\n      |\n      (\n        download\n      )\n    )\n    \\.[a-z0-9]{4,8}\\.zip'\n  )\n)",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:38:06.012323Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

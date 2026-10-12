@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-12-09T04:51:39.758496Z",
+    "name": "CVE-2025-55182 - Potential Exploitation via Insecure Deserialization of React Server Components RSC",
+    "native_rule_id": "2365332093289308509",
+    "platform": "sentinelone-edr",
+    "severity": "Medium",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": true,
+    "createdAt": "2025-12-08T12:52:38.391429Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2365332093289308509",
+    "lastAlertTime": null,
+    "name": "CVE-2025-55182 - Potential Exploitation via Insecure Deserialization of React Server Components RSC",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "dataSource.name = 'SentinelOne' and endpoint.os in ('osx', 'linux') and event.type = 'Process Creation' and src.process.name in ('node', 'bun') and src.process.cmdline contains 'next start' and tgt.process.name in:anycase ('dash', 'bash', 'zsh', 'busybox', 'sh', 'python', 'perl', 'ruby', 'lua', 'php', 'awk', 'vim', 'openssl') and tgt.process.cmdline matches '[\\\\s;|&$(){}<>`/](curl|wget|nc|ncat|netcat|socat|ping|ifconfig|whoami|uname|id|ls|pwd|ps|cat|echo|chmod|nohup|rm|mkfifo|setsid|xterm|wait|base64|dd|tar|unzip|gzip)' and not (src.process.cmdline contains ('build', 'install', 'npm run')) and not (tgt.process.cmdline contains ('ldd', 'next start', ' aws s3', ' lp'))",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Medium",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by bhanu.nandanampati@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": "Suspicious",
+    "updatedAt": "2025-12-09T04:51:39.758496Z",
+    "updater": "bhanu.nandanampati@nopalcyber.com",
+    "updaterId": "2091137091831008615"
+  }
+}

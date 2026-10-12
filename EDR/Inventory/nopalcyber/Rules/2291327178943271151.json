@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2026-08-17T10:22:10.183185Z",
+    "name": "[Nopalcyber]Suspicious PowerShell File Download from External Domain",
+    "native_rule_id": "2291327178943271151",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": true,
+    "createdAt": "2025-08-28T10:18:05.129977Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 9,
+    "id": "2291327178943271151",
+    "lastAlertTime": "2026-09-18T05:00:31.350000Z",
+    "name": "[Nopalcyber]Suspicious PowerShell File Download from External Domain",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "event.type = \"Process Creation\" and src.process.name in:anycase (\"powershell.exe\", \"pwsh.exe\") and(src.process.cmdline contains:anycase \"Invoke-WebRequest\" or src.process.cmdline contains:anycase \"iwr \" or src.process.cmdline contains:anycase \"wget \" or src.process.cmdline contains:anycase \"DownloadFile\" or src.process.cmdline contains:anycase \"DownloadString\") and src.process.cmdline matches \".*https?://[^\\\\s]+\\\\.[a-z]{2,}.*\" and src.process.netConnOutCount > 0 and!(src.process.cmdline contains:anycase \"slackb.com/error\") and!(src.process.cmdline contains:anycase \"chocolatey\") and src.process.user != \"NT AUTHORITY\\\\SYSTEM\"",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by bhanu.nandanampati@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": "Suspicious",
+    "updatedAt": "2026-08-17T10:22:10.183185Z",
+    "updater": "bhanu.nandanampati@nopalcyber.com",
+    "updaterId": "2091137091831008615"
+  }
+}

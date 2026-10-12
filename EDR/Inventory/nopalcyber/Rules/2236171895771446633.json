@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:38:06.973554Z",
+    "name": "[NopalCyber]Cleanup Activity - Hafnium Exchange Vulnerability",
+    "native_rule_id": "2236171895771446633",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T07:54:23.007555Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236171895771446633",
+    "lastAlertTime": null,
+    "name": "[NopalCyber]Cleanup Activity - Hafnium Exchange Vulnerability",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "((( ( ( src.process.cmdline contains:anycase '+h') AND (src.process.cmdline contains:anycase '+r') AND (src.process.cmdline contains:anycase '+s') AND (src.process.cmdline contains:anycase 'Outlook') AND (src.process.cmdline contains:anycase 'attrib' )) OR (( src.process.cmdline contains:anycase 'del') AND (src.process.cmdline contains:anycase 'owa\\auth\\outlook' ) )) AND (src.process.cmdline contains:anycase 'aspx') AND (src.process.cmdline contains:anycase 'inetpub\\wwwroot\\aspnet_client' )))",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:38:06.973554Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

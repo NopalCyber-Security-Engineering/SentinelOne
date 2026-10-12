@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:32:06.782330Z",
+    "name": "[NopalCyber] MS Exchange Post-Exploitation Malware",
+    "native_rule_id": "2236219689647801480",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T09:29:20.481604Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236219689647801480",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] MS Exchange Post-Exploitation Malware",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "\"(\n  (\n    cmdline contains:anycase 'root\\DrSDKCaller.exe'\n    OR cmdline contains:anycase 'Public\\all.exe'\n    OR cmdline contains:anycase 'Public\\dump.dll'\n    OR cmdline contains:anycase 'Public\\ad.exe'\n    OR cmdline contains:anycase 'PerfLogs\\gpg-error.exe'\n    OR cmdline contains:anycase 'PerfLogs\\cm.exe'\n    OR cmdline contains:anycase 'system\\ado\\msado32.tlb'\n  )\n  OR\n  (\n    tgt.file.path contains:anycase 'root\\DrSDKCaller.exe'\n    OR tgt.file.path contains:anycase 'Public\\all.exe'\n    OR tgt.file.path contains:anycase 'Public\\dump.dll'\n    OR tgt.file.path contains:anycase 'Public\\ad.exe'\n    OR tgt.file.path contains:anycase 'PerfLogs\\gpg-error.exe'\n    OR tgt.file.path contains:anycase 'PerfLogs\\cm.exe'\n    OR tgt.file.path contains:anycase 'system\\ado\\msado32.tlb'\n  )\n)\nOR file.hash.sha256 in:anycase\n(\n  'c838e77afe750d713e67ffeb4ec1b82ee9066cbe21f11181fd34429f70831ec1' , '65a002fe655dc1751add167cf00adf284c080ab2e97cd386881518d3a31d27f5' , 'b5038f1912e7253c7747d2f0fa5310ee8319288f818392298fd92009926268ca' , 'c838e77afe750d713e67ffeb4ec1b82ee9066cbe21f11181fd34429f70831ec1' , 'be07bd9310d7a487ca2f49bcdaafb9513c0c8f99921fdf79a05eaba25b52d257' , '76a2f2644cb372f540e179ca2baa110b71de3370bb560aca65dcddbd7da3701e' , '074eb0e75bb2d8f59f1fd571a8c5b76f9c899834893da6f7591b68531f2b5d82' , '45c8233236a69a081ee390d4faa253177180b2bd45d8ed08369e07429ffbe0a9' , '9ceca98c2b24ee30d64184d9d2470f6f2509ed914dafb87604123057a14c57c0' , '29b75f0db3006440651c6342dc3c0672210cfb339141c75e12f6c84d990931c3' , 'c8c907a67955bcdf07dd11d35f2a23498fb5ffe5c6b5d7f36870cf07da47bff2'\n)\"\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:32:06.782330Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

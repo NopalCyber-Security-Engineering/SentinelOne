@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2026-08-17T10:24:11.920035Z",
+    "name": "[Nopalcyber]PowerShell Execution from Browser with Suspicious Arguments",
+    "native_rule_id": "2291315489929601503",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": true,
+    "createdAt": "2025-08-28T09:54:51.691062Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2291315489929601503",
+    "lastAlertTime": null,
+    "name": "[Nopalcyber]PowerShell Execution from Browser with Suspicious Arguments",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "src.process.name in:anycase ('powershell.exe', 'pwsh.exe') and  (src.process.cmdline contains:anycase 'FromBase64String' or   src.process.cmdline contains:anycase 'iex' or   src.process.cmdline contains:anycase 'Invoke-Expression' or   src.process.cmdline contains:anycase '-enc' or   src.process.cmdline contains:anycase '-encoded') and src.process.parent.name in:anycase ('chrome.exe', 'firefox.exe', 'msedge.exe', 'iexplore.exe', 'opera.exe')",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by bhanu.nandanampati@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": "Suspicious",
+    "updatedAt": "2026-08-17T10:24:11.920035Z",
+    "updater": "bhanu.nandanampati@nopalcyber.com",
+    "updaterId": "2091137091831008615"
+  }
+}

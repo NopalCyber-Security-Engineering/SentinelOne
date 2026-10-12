@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2024-09-27T04:05:28.728285Z",
+    "name": "[NopalCyber] Possible Registry Credential Enumeration",
+    "native_rule_id": "2047875513150813982",
+    "platform": "sentinelone-edr",
+    "severity": "Medium",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2024-09-26T12:43:05.005507Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "This query detects enumeration and discovery of credentials within the Registry, including Putty sessions.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2047875513150813982",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Possible Registry Credential Enumeration",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "(tgt.process.cmdline contains:anycase \"query HKLM /f password /t REG_SZ /s\" OR tgt.process.cmdline contains:anycase \"query HKCU /f password /t REG_SZ /s\" OR tgt.process.cmdline contains:anycase \"query HKCU\\Software\\SimonTatham\\PuTTY\\Sessions /t REG_SZ /s\") dataSource.category = 'security' dataSource.name in ('SentinelOne', 'Windows Event Logs')",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Medium",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2024-09-27T04:05:28.728285Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

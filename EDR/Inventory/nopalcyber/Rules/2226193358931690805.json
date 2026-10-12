@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2026-08-17T10:20:11.748989Z",
+    "name": "[NopalCyber] XMR-Stak (Acrux) Cryptominer - Registry Persistence",
+    "native_rule_id": "2226193358931690805",
+    "platform": "sentinelone-edr",
+    "severity": "Medium",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-05-30T13:28:48.718199Z",
+    "creator": "dileep.chokkapu@nopalcyber.com",
+    "creatorId": "2167433160644023071",
+    "description": "Cryptominer - Registry Persistence",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2226193358931690805",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] XMR-Stak (Acrux) Cryptominer - Registry Persistence",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "registry.keyPath contains:anycase '\\CurrentVersion\\Run' AND registry.value contains:anycase '\\noconsole_launcher.exe'",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Medium",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by bhanu.nandanampati@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2026-08-17T10:20:11.748989Z",
+    "updater": "bhanu.nandanampati@nopalcyber.com",
+    "updaterId": "2091137091831008615"
+  }
+}

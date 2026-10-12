@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:32:06.406379Z",
+    "name": "[NopalCyber] Mimikatz Credential Stealer",
+    "native_rule_id": "2236220900761482731",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T09:31:44.858064Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236220900761482731",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Mimikatz Credential Stealer",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "\"(\n  (\n    tgt.process.cmdline contains:anycase '\\mimikatz.exe'\n    OR tgt.process.cmdline contains:anycase '\\mimikat.exe'\n    OR tgt.process.cmdline contains:anycase '\\mimi.exe'\n    OR tgt.process.cmdline contains:anycase '\\mimilove.exe'\n    OR tgt.process.cmdline contains:anycase 'mkatz.exe'\n    OR tgt.process.cmdline contains:anycase 'sekurlsa::logonPasswords'\n    OR tgt.process.cmdline contains:anycase 'lsadump::sam'\n    OR tgt.process.cmdline contains:anycase 'lsadump::secrets'\n  )\n  AND process.commandLine Does Not ContainCIS 'Log'\n)\nOR\n(\n  tgt.file.path contains:anycase '\\mimikatz.exe'\n  OR tgt.file.path contains:anycase '\\mimikat.exe'\n  OR tgt.file.path contains:anycase '\\mimi.exe'\n  OR tgt.file.path contains:anycase '\\mimilove.exe'\n  OR tgt.file.path contains:anycase '\\mimilib.dll'\n  OR tgt.file.path contains:anycase '\\mimidrv.sys'\n)\"\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:32:06.406379Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

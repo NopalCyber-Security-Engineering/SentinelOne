@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T07:28:06.839869Z",
+    "name": "[NopalCyber] Lsass Process Dump",
+    "native_rule_id": "2236223323852855903",
+    "platform": "sentinelone-edr",
+    "severity": "Critical",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T09:36:33.713526Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236223323852855903",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Lsass Process Dump",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "\"(EndpointOS == \"\"Windows\"\" and EventType == \"\"Process Creation\"\") and\n(\n  (\n    CmdLine contains_anycase [\"\"-ma lsass.exe\"\", \"\" (ps lsass).id \"\"] or\n    CmdLine regexp `comsvcs\\.dll,\\s{0,5}MiniDump ` or\n    CmdLine regexp `(?i)(lsass(\\.exe\\.){0,1}[0-9]{0,3}\\.dmp$)` or\n    TgtFilePath contains_anycase `:\\Windows\\Temp\\dumpert.dmp` or\n    SrcProcCmdline contains_ic \"\"live lsa\"\"\n  )\n  and SrcProcName not_in [\"\"WerFault.exe\"\", \"\"wermgr.exe\"\", \"\"mvserver.exe\"\"]\n  and not (TgtProcCmdLine contains_anycase `\\systemprofile\\AppData\\Local\\CrashDumps`)\n)\"\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "Critical",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T07:28:06.839869Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

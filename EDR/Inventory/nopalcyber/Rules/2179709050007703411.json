@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-03-27T10:14:07.247738Z",
+    "name": "[NopalCyber] Clearing Windows Event Logs via Wevtutil",
+    "native_rule_id": "2179709050007703411",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": true,
+    "createdAt": "2025-03-27T10:12:47.277035Z",
+    "creator": "yugandhar.mocherla@nopalcyber.com",
+    "creatorId": "1791979712572347230",
+    "description": "Detects the deletion of Windows event logs using wevtutil.exe. An adversary can abuse this command-line utility to erase critical system and security logs, effectively eliminating evidence of their activities and hindering detection efforts. By clearing event logs, attackers can disrupt incident response, impede forensic analysis, and make it more difficult for defenders to trace malicious actions. This technique is often used in conjunction with other defense evasion strategies to maintain a low profile and avoid detection during or after an attack.",
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2179709050007703411",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] Clearing Windows Event Logs via Wevtutil",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "dataSource.name = 'SentinelOne' and endpoint.os = 'windows' and event.type = 'Behavioral Indicators' and indicator.name = 'EventViewerTampering' and (src.process.name contains 'wevtutil' or src.process.displayName = 'Eventing Command Line Utility') and src.process.cmdline matches '(cl|clear-log)\\\\s+(system|application|security)' and (src.process.parent.name in:anycase ('powershell.exe', 'cmd.exe') or src.process.parent.displayName in ('Windows Command Processor', 'Windows PowerShell'))\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by yugandhar.mocherla@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": "Suspicious",
+    "updatedAt": "2025-03-27T10:14:07.247738Z",
+    "updater": "yugandhar.mocherla@nopalcyber.com",
+    "updaterId": "1791979712572347230"
+  }
+}

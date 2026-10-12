@@ -1,0 +1,51 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "events",
+    "last_modified": "2025-06-16T05:40:05.897687Z",
+    "name": "[NopalCyber] File in the Root of Public Dir",
+    "native_rule_id": "2236227194172060437",
+    "platform": "sentinelone-edr",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "createdAt": "2025-06-13T09:44:15.090736Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": null,
+    "editable": true,
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2236227194172060437",
+    "lastAlertTime": null,
+    "name": "[NopalCyber] File in the Root of Public Dir",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "events",
+    "reachedLimit": false,
+    "s1ql": "\"(\n  event.category = 'Process'\n  AND tgt.process.cmdline RegExp ':\\\\Users\\\\Public\\\\[0-9A-Za-z]{1,20}\\.\n  (\n    exe|dll|ocx|vbs|vbe|wsf|jar|jse|bat|wpl|dat|bin|rtf|png|jpg\n  )\n  '\n  AND NOT\n  (\n    tgt.process.cmdline contains:anycase 'display'\n    OR tgt.process.cmdline contains:anycase 'convert'\n    OR tgt.process.cmdline contains:anycase 'text'\n    OR tgt.process.cmdline contains:anycase 'test'\n    OR tgt.process.cmdline contains:anycase 'Office'\n    OR tgt.process.cmdline contains:anycase 'SweepDownloaded'\n    OR tgt.process.cmdline contains:anycase 'Level Platforms'\n    OR tgt.process.cmdline contains:anycase 'ScreenShot'\n    OR tgt.process.cmdline contains:anycase 'Bginfo'\n    OR tgt.process.cmdline contains:anycase 'Microsoft'\n    OR tgt.process.cmdline contains:anycase 'VMware'\n    OR tgt.process.cmdline contains:anycase 'Print'\n  )\n  AND NOT\n  (\n    src.process.commandLine contains:anycase 'Level Platforms'\n  )\n)\nOR\n(\n  event.category = 'File'\n  AND tgt.file.path RegExp ':\\\\Users\\\\Public\\\\[0-9A-Za-z]{1,20}\\.\n  (\n    exe|dll|ocx|txt|vbs|vbe|wsf|jar|jse|bat|wpl|bin|rtf|png|jpg\n  )\n  $'\n  AND NOT\n  (\n    tgt.file.path contains:anycase 'display'\n    OR tgt.file.path contains:anycase 'convert'\n    OR tgt.file.path contains:anycase 'text'\n    OR tgt.file.path contains:anycase 'test'\n    OR tgt.file.path contains:anycase 'Office'\n    OR tgt.file.path contains:anycase 'SweepDownloaded'\n    OR tgt.file.path contains:anycase 'Level Platforms'\n    OR tgt.file.path contains:anycase 'ScreenShot'\n    OR tgt.file.path contains:anycase 'Bginfo'\n    OR tgt.file.path contains:anycase 'Microsoft'\n    OR tgt.file.path contains:anycase 'VMware'\n    OR tgt.file.path contains:anycase 'Print'\n    OR tgt.file.path contains:anycase 'Level Platforms'\n    OR tgt.file.path contains:anycase 'install'\n  )\n  AND NOT\n  (\n    src.process.commandLine contains:anycase 'msiexec.exe'\n    OR src.process.commandLine contains:anycase 'Kaseya'\n  )\n)\"\n",
+    "scope": "account",
+    "scopeId": [
+      "1791917035282979048"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd.,",
+    "severity": "High",
+    "siteId": null,
+    "siteName": null,
+    "status": "Active",
+    "statusReason": "Rule was activated by suresh.jampala@nopalcyber.com",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2025-06-16T05:40:05.897687Z",
+    "updater": "suresh.jampala@nopalcyber.com",
+    "updaterId": "2147178620910726714"
+  }
+}

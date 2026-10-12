@@ -1,0 +1,76 @@
+{
+  "inventory": {
+    "classification": "custom-unmanaged",
+    "client": "nopalcyber",
+    "enabled_status": "Active",
+    "kind": "scheduled",
+    "last_modified": "2026-10-09T09:56:07.627945Z",
+    "name": "[Nopalcyber][AI SIEM] Repeated Internet Connections to Critical Internal Service",
+    "native_rule_id": "2586299849543635994",
+    "platform": "sentinelone-ai-siem",
+    "severity": "High",
+    "source": "Detection Platform inventory"
+  },
+  "native_rule": {
+    "accountId": "1791917035282979048",
+    "accountName": "Nopal Support Services Pvt. Ltd.,",
+    "activeResponse": false,
+    "coolOffSettings": {
+      "renotifyMinutes": 1440
+    },
+    "createdAt": "2026-10-09T09:56:07.628686Z",
+    "creator": "bhanu.nandanampati@nopalcyber.com",
+    "creatorId": "2091137091831008615",
+    "description": "\nDetects a single external IP making 30+ connections within an hour to an internal remote-admin, file-sharing or database service (SSH, Telnet, SMB, RDP, MSSQL, MySQL, VNC, WinRM). Indicates brute-force or automated attacks on an internet-exposed service.",
+    "editable": true,
+    "entityMappings": [
+      {
+        "columnName": "src_endpoint.ip"
+      },
+      {
+        "columnName": "tranip"
+      },
+      {
+        "columnName": "tranport"
+      }
+    ],
+    "expiration": null,
+    "expirationMode": "Permanent",
+    "expired": false,
+    "generatedAlerts": 0,
+    "id": "2586299849543635994",
+    "lastAlertTime": null,
+    "name": "[Nopalcyber][AI SIEM] Repeated Internet Connections to Critical Internal Service",
+    "networkQuarantine": false,
+    "queryLang": "2.0",
+    "queryType": "scheduled",
+    "reachedLimit": false,
+    "s1ql": "",
+    "scheduledParams": {
+      "alertPerRow": false,
+      "disableStreaksLogic": false,
+      "lookbackWindowMinutes": 60,
+      "query": "dataSource.name = 'FortiGate' event.type = 'traffic' unmapped.srcintfrole = 'wan' unmapped.action != 'deny'\ntranport in ('22','23','445','1433','3306','3389','5900','5985','5986')\n!(src_endpoint.ip matches '^(10\\\\.|172\\\\.(1[6-9]|2[0-9]|3[01])\\\\.|192\\\\.168\\\\.|127\\\\.|169\\\\.254\\\\.)')\n| group sessions = count() by src_endpoint.ip, src_endpoint.location.country, tranip, tranport\n| filter sessions >= 30\n| sort -sessions",
+      "runIntervalMinutes": 60,
+      "threshold": {
+        "operator": "Greater",
+        "value": 0
+      }
+    },
+    "scope": "site",
+    "scopeId": [
+      "1800011140155280069"
+    ],
+    "scopeName": "Nopal Support Services Pvt. Ltd., / NopalCyber",
+    "severity": "High",
+    "siteId": "1800011140155280069",
+    "siteName": "NopalCyber",
+    "status": "Active",
+    "statusReason": "Rule was activated by bhanu.nandanampati@nopalcyber.com and will become Active within an hour",
+    "templateRuleId": null,
+    "treatAsThreat": null,
+    "updatedAt": "2026-10-09T09:56:07.627945Z",
+    "updater": "bhanu.nandanampati@nopalcyber.com",
+    "updaterId": "2091137091831008615"
+  }
+}
